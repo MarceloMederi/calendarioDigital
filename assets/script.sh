@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Verificar se o Docker está instalado
-if ! command -v docker &> /dev/null
-then
-    echo "Docker não está instalado. Por favor, instale o Docker antes de executar este script."
-    exit 1
-fi
-
 # Clonar o repositório do GitHub
 git clone https://github.com/MarceloMederi/cadastro-usuario
 
