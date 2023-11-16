@@ -1,0 +1,13 @@
+# Use a imagem Nginx como base
+FROM nginx:alpine
+
+# Crie e defina o diretório de trabalho
+WORKDIR /usr/share/nginx/html
+
+# Copie os arquivos necessários para o contêiner
+COPY index.html .
+COPY css/ ./css/
+COPY JS/ ./JS/
+
+# Exponha a porta 3005 (ou a porta que o seu aplicativo usa)
+EXPOSE 3005
