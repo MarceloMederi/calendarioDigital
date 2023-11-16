@@ -1,12 +1,13 @@
+/*Importa a fonte "Open Sans" da Google Fonts, com pesos 400 e 500, para ser usada no documento*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 
-* {
+* { /*Zera as margens e preenchimentos padrão e define a fonte global para 'Open Sans'*/
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
-body {
+body {/*Define o corpo da página com altura total da viewport, um fundo de gradiente linear e configurações de flexbox para centralizar o conteúdo*/
     height: 100vh;
     background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
     display: flex;
@@ -15,8 +16,8 @@ body {
     flex-direction: column;
 }
 
-/* Estilo comum para as divs */
-.titulo, .semana div, .atualidade, .relogio div, .clima {
+/* Define estilos comuns para diversas seções, incluindo fundo preto, texto branco, borda arredondada, espaçamento de letras, sombra e margem inferior */
+.titulo, .data div, .atualidade, .relogio div, .clima {
     background-color: black;
     color: white;
     border-radius: 10px;
@@ -25,25 +26,25 @@ body {
     margin-bottom: 20px; /* Adiciona espaço entre as divs */
 }
 
-.titulo {
+.titulo { /*Especifica estilos adicionais para o título, usando uma fonte diferente, aumentando o tamanho e tornando o texto mais negrito*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bolder;
 }
 
-.semana div {
+.data div { /*Define estilos para a seção da semana, configurando a exibição flexível, cor do texto, tamanho da fonte e peso da fonte*/
     display: flex;
     color: white;
     font-size: 50px;
     font-weight: bolder;
 }
 
-.atualidade {
+.atualidade { /*Configura estilos para a seção de atualidade, ajustando o tamanho da fonte e o peso da fonte*/
     font-size: 50px;
     font-weight: bolder;
 }
 
-.relogio {
+.relogio { /*Estabelece estilos para a seção do relógio, usando flexbox para alinhar itens, definindo altura e largura, cor de fundo, borda arredondada e sombra*/
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -54,7 +55,7 @@ body {
     box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
 }
 
-.relogio div {
+.relogio div { /*Define estilos para as subseções do relógio, configurando altura e largura, exibição flexível em coluna, alinhamento e justificação, cor do texto, fundo com transparência, sombra e borda arredondada*/
     height: 170px;
     width: 150px;
     display: flex;
@@ -68,16 +69,16 @@ body {
     letter-spacing: 3px;
 }
 
-.relogio span {
+.relogio span { /*Configura estilos para as <span> dentro da seção do relógio, ajustando o peso da fonte e o tamanho da fonte*/
     font-weight: bolder;
     font-size: 60px;
 }
 
-.relogio span.tempo {
+.relogio span.tempo { /*Define estilos específicos para as <span> com a classe "tempo" dentro da seção do relógio, ajustando o tamanho da fonte*/
     font-size: 10px;
 }
 
-.clima {
+.clima { /*Configura estilos para a seção de clima, ajustando o tamanho da fonte e a margem superior para separação*/
     font-size: 3em;
     margin-top: 30px;
 }
