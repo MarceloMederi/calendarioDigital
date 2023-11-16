@@ -1,63 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+/* Estilo comum para as divs */
+.titulo, .semana div, .atualidade, .relogio div, .clima {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+    margin-bottom: 20px; /* Adiciona espaço entre as divs */
 }
 
 .titulo {
-    background-color: black;
-    display: flex;
-    position: fixed;
-    top: 0;
-    margin-top: 2%;
-    font-family: allumi, Sans;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bolder;
-    border-radius: 10px;
-    letter-spacing: 3px;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
 }
 
-.semana div{
-    background-color: black;
+.semana div {
     display: flex;
-    position: fixed;
-    top: 0;
-    margin-left: 7%;
-    margin-top: 15%;
     color: white;
     font-size: 50px;
     font-weight: bolder;
-    border-radius: 10px;
-    letter-spacing: 3px;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
 }
 
 .atualidade {
-    background-color: black;
-    display: flex;
-    position: fixed;
-    top: 0;
-    margin-top: 8%;
-    color: white;
     font-size: 50px;
     font-weight: bolder;
-    border-radius: 10px;
-    letter-spacing: 3px;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
 }
-.relogio{
+
+.relogio {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -68,7 +54,7 @@ body{
     box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
 }
 
-.relogio div{
+.relogio div {
     height: 170px;
     width: 150px;
     display: flex;
@@ -81,11 +67,17 @@ body{
     border-radius: 10px;
     letter-spacing: 3px;
 }
-.relogio span{
+
+.relogio span {
     font-weight: bolder;
     font-size: 60px;
 }
 
-.relogio span.tempo{
+.relogio span.tempo {
     font-size: 10px;
+}
+
+.clima {
+    font-size: 1.5em;
+    margin-top: 30px;
 }
