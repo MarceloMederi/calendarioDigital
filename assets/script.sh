@@ -7,4 +7,4 @@ git clone https://github.com/MarceloMederi/cadastro-usuario
 cd cadastro-usuario
 
 # Construir a imagem Docker e executar o contêiner
-docker build -t app . && docker run -d -p 3005:80 app
+docker build -t app . && docker run -d -p 3000:3000 app
