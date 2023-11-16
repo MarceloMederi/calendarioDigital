@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clonar o repositório do GitHub
-git clone https://github.com/MarceloMederi/cadastro-usuario
+git clone https://github.com/MarceloMederi/calendarioDigital
 
 # Entrar no diretório clonado
 cd cadastro-usuario
