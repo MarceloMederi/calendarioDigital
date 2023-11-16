@@ -3,7 +3,7 @@ const dia = document.getElementById('dia');
 const mes = document.getElementById('mes');
 const ano = document.getElementById('ano');
 
-const atual = document.getElementById('atual');
+const atual = document.getElementById('semana');
 const temperatura = document.getElementById('temperatura');
 const cidade = document.getElementById('cidade');
 
