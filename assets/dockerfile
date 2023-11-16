@@ -9,5 +9,5 @@ COPY index.html .
 COPY css/ ./css/
 COPY JS/ ./JS/
 
-# Exponha a porta 3000 (ou a porta que o seu aplicativo usa)
-EXPOSE 3000
+# Exponha a porta 7070 (ou a porta que o seu aplicativo usa)
+EXPOSE 7070
