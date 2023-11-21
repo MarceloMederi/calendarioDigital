@@ -27,12 +27,14 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
 }
 
 .titulo { /*Especifica estilos adicionais para o título, usando uma fonte diferente, aumentando o tamanho e tornando o texto mais negrito*/
+    margin-bottom: 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bolder;
 }
 
 .data div { /*Define estilos para a seção da semana, configurando a exibição flexível, cor do texto, tamanho da fonte e peso da fonte*/
+    margin-bottom: 50px;
     display: flex;
     color: white;
     font-size: 50px;
@@ -40,6 +42,7 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
 }
 
 .atualidade { /*Configura estilos para a seção de atualidade, ajustando o tamanho da fonte e o peso da fonte*/
+    margin-bottom: 50px;
     font-size: 50px;
     font-weight: bolder;
 }
@@ -78,7 +81,7 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
     font-size: 10px;
 }
 
-.clima { /*Configura estilos para a seção de clima, ajustando o tamanho da fonte e a margem superior para separação*/
+.clima { /*Configura estilos para a seção de clima e umidade, ajustando o tamanho da fonte e a margem superior para separação*/
     font-size: 3em;
     margin-top: 30px;
 }
