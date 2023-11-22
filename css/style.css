@@ -17,7 +17,7 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
 }
 
 /* Define estilos comuns para diversas seções, incluindo fundo preto, texto branco, borda arredondada, espaçamento de letras, sombra e margem inferior */
-.titulo, .data div, .atualidade, .relogio div, .clima {
+.titulo, .cidade, .data div, .atualidade, .relogio div, .clima {
     background-color: black;
     color: white;
     border-radius: 10px;

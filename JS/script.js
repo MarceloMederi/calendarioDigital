@@ -1,62 +1,84 @@
 // Seleção de elementos HTML
+const cidadeInput = document.getElementById('cidadeInput');
 const dia = document.getElementById('dia');
 const mes = document.getElementById('mes');
 const ano = document.getElementById('ano');
 const atual = document.getElementById('semana');
-const cidade = document.getElementById('cidade');
+const cidadeElement = document.getElementById('cidade');
 const horas = document.getElementById('horas');
 const minutos = document.getElementById('minutos');
 const segundos = document.getElementById('segundos');
-const temperatura = document.getElementById('temperatura');
-const umidade = document.getElementById('umidade');
+const temperaturaElement = document.getElementById('temperatura');
+const umidadeElement = document.getElementById('umidade');
 
 // Configurações para a API OpenWeatherMap
 const apiKey = 'b60be7941bdf80361cd5c66c74dc0bb7';
-const latitude = -18.9113;
-const longitude = -48.2622;
+
+// Função de debounce para atrasar a execução da função de busca
+const debounce = function (func, delay) {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function () {
+            func.apply(this, args);
+        }, delay);
+    };
+};
+
+// Função que busca dados da previsão do tempo com base na cidade digitada
+const buscarPrevisaoTempo = async function (cidade) {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric`);
+        const data = await response.json();
+
+        const nomeCidade = data.name;
+        const temperaturaTexto = `${data.main.temp} °C`;
+        const umidadeTexto = `${data.main.humidity}%`;
+
+        cidadeElement.textContent = `${nomeCidade} - ${temperaturaTexto}`;
+        umidadeElement.textContent = `Umidade: ${umidadeTexto}`;
+    } catch (error) {
+        console.error('Erro ao obter temperatura e umidade:', error);
+    }
+};
+
+// Adiciona um evento de escuta ao input da cidade com debounce de 500 milissegundos
+cidadeInput.addEventListener('input', debounce(function () {
+    const cidadeDigitada = cidadeInput.value;
+    if (cidadeDigitada.trim() !== '') {
+        buscarPrevisaoTempo(cidadeDigitada);
+    }
+}, 500));
 
 // Função que atualiza a hora e faz chamada à API periodicamente
 const relogio = setInterval(function time() {
-    let dateToday = new Date();
-    const hj = dateToday.getDate();
-    let me = dateToday.getMonth() + 1;
-    const an = dateToday.getFullYear();
+    const dateToday = new Date();
+    const diaDoMes = dateToday.getDate();
+    let mesAtual = dateToday.getMonth() + 1;
+    const anoAtual = dateToday.getFullYear();
     const presente = dateToday;
 
-    let hr = dateToday.getHours();
-    let min = dateToday.getMinutes();
-    let seg = dateToday.getSeconds();
+    let horasAtual = dateToday.getHours();
+    let minutosAtual = dateToday.getMinutes();
+    let segundosAtual = dateToday.getSeconds();
 
-    if (me < 10) me = '0' + me;
-    if (hr < 10) hr = '0' + hr;
-    if (min < 10) min = '0' + min;
-    if (seg < 10) seg = '0' + seg;
+    if (mesAtual < 10) mesAtual = '0' + mesAtual;
+    if (horasAtual < 10) horasAtual = '0' + horasAtual;
+    if (minutosAtual < 10) minutosAtual = '0' + minutosAtual;
+    if (segundosAtual < 10) segundosAtual = '0' + segundosAtual;
 
-    dia.textContent = hj;
-    mes.textContent = me;
-    ano.textContent = an;
+    dia.textContent = diaDoMes;
+    mes.textContent = mesAtual;
+    ano.textContent = anoAtual;
 
-    const options = { weekday: 'long' };
-    const dataFormatada = presente.toLocaleDateString('pt-BR', options);
-    const dataFormatadaCapitalizada = dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
+    const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+    const diaDaSemana = diasDaSemana[presente.getDay()];
 
-    atual.textContent = dataFormatadaCapitalizada;
-    horas.textContent = hr;
-    minutos.textContent = min;
-    segundos.textContent = seg;
+    atual.textContent = diaDaSemana;
+    horas.textContent = horasAtual;
+    minutos.textContent = minutosAtual;
+    segundos.textContent = segundosAtual;
 
-    // Função que busca dados da previsão do tempo
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`)
-        .then(response => response.json())
-        .then(data => {
-            const nomeCidade = data.name;
-            const temperaturaTexto = `${data.main.temp} °C`;
-            const umidadeTexto = `${data.main.humidity}%`;
+    // Restante do código para buscar temperatura e umidade pode ser mantido aqui
 
-            cidade.textContent = `${nomeCidade} - ${temperaturaTexto}`;
-            umidade.textContent = `Umidade: ${umidadeTexto}`;
-        })
-        .catch(error => {
-            console.error('Erro ao obter temperatura e umidade:', error);
-        });
 }, 1000);
