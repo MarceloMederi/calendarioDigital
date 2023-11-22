@@ -9,6 +9,7 @@ const minutos = document.getElementById('minutos');
 const segundos = document.getElementById('segundos');
 const temperaturaElement = document.getElementById('temperatura');
 const umidadeElement = document.getElementById('umidade');
+let mapa; // Variável global para armazenar a instância do mapa
 
 const apiKey = 'b60be7941bdf80361cd5c66c74dc0bb7';
 
@@ -60,6 +61,14 @@ const buscarPrevisaoTempo = async function (cidade) {
         // Chama a função para atualizar a data
         atualizarData(horaLocal);
 
+        // Remove o mapa anterior, se existir
+        if (mapa) {
+            mapa.remove();
+        }
+
+        // Chama a função para inicializar o mapa
+        inicializarMapa(data.coord.lat, data.coord.lon);
+
     } catch (error) {
         console.error('Erro ao obter temperatura e umidade:', error);
     }
@@ -89,10 +98,28 @@ cidadeInput.addEventListener('input', debounce(function () {
     }
 }, 500));
 
-const relogio = setInterval(function () {
-    // Chama a função para buscar a previsão do tempo e ajustar a hora
+// Atualiza a previsão do tempo e o mapa a cada 20 segundos
+setInterval(function () {
     const cidadeDigitada = cidadeInput.value;
     if (cidadeDigitada.trim() !== '') {
         buscarPrevisaoTempo(cidadeDigitada);
     }
-}, 1000);
+}, 20000);
+
+function inicializarMapa(latitude, longitude) {
+    // Crie um novo mapa no contêiner com o ID 'mapa'
+    mapa = L.map('mapa').setView([latitude, longitude], 12);
+
+    // Adicione um provedor de mapas (usando OpenStreetMap como exemplo)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(mapa);
+
+    // Adicione um marcador ao mapa
+    L.marker([latitude, longitude]).addTo(mapa)
+        .bindPopup('Nome da Cidade')
+        .openPopup();
+}
+
+// Inicializa o mapa com coordenadas padrão
+inicializarMapa(-23.5505, -46.6333);
