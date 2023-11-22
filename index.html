@@ -12,7 +12,7 @@
     <header class="titulo">CALENDÁRIO DIGITAL</header>
 
     <div class="cidade">
-        <input type="text" id="cidadeInput" placeholder="Digite a cidade">
+        <input type="text" class="cidadeInput" id="cidadeInput" placeholder="Digite a cidade">
     </div>
     
 
@@ -36,17 +36,7 @@
     <div class="relogio">
         <div>
             <span id="horas"></span>
-            <span class="tempo">Horas</span>
-        </div>
-    
-        <div>
-            <span id="minutos"></span>
-            <span class="tempo">Minutos</span>
-        </div>
-    
-        <div>
-            <span id="segundos"></span>
-            <span class="tempo">Segundos</span>
+            <span class="tempo"></span>
         </div>
     </div>
 
@@ -62,5 +52,7 @@
 
     <!-- Importando o código JS na página -->
     <script src="JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+
 </body>
 </html>

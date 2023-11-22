@@ -32,7 +32,12 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
     font-size: 50px;
     font-weight: bolder;
 }
-
+.cidadeInput {
+    width: 200px;
+    height: 60px;
+    font-size: 16px; 
+    text-align: center;
+}
 .data div { /*Define estilos para a seção da semana, configurando a exibição flexível, cor do texto, tamanho da fonte e peso da fonte*/
     margin-bottom: 50px;
     display: flex;
@@ -47,30 +52,6 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
     font-weight: bolder;
 }
 
-.relogio { /*Estabelece estilos para a seção do relógio, usando flexbox para alinhar itens, definindo altura e largura, cor de fundo, borda arredondada e sombra*/
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 200px;
-    width: 550px;
-    background: transparent;
-    border-radius: 7px;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
-}
-
-.relogio div { /*Define estilos para as subseções do relógio, configurando altura e largura, exibição flexível em coluna, alinhamento e justificação, cor do texto, fundo com transparência, sombra e borda arredondada*/
-    height: 170px;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background: rgba(5, 5, 5, .9);
-    box-shadow: 5px 5px 15px rgba(5, 5, 5, .7);
-    border-radius: 10px;
-    letter-spacing: 3px;
-}
 
 .relogio span { /*Configura estilos para as <span> dentro da seção do relógio, ajustando o peso da fonte e o tamanho da fonte*/
     font-weight: bolder;
