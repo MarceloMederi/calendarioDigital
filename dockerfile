@@ -1,14 +1,11 @@
 # Use uma imagem base leve com Nginx
 FROM nginx:alpine
 
-# Remova a configuração padrão do Nginx
-RUN rm -rf /etc/nginx/conf.d/*
+# Defina o diretório de trabalho no contêiner
+WORKDIR /app
 
-# Copie todos os arquivos do seu projeto para o diretório padrão do Nginx
-COPY . /usr/share/nginx/html
+# Copie os arquivos HTML, CSS e JavaScript para o diretório de trabalho
+COPY . .
 
-# Exponha a porta 80, que é a porta padrão do Nginx
-EXPOSE 80
-
-# Comando para iniciar o Nginx em primeiro plano
-CMD ["nginx", "-g", "daemon off;"]
+# Exponha a porta 3000 (ou a porta que o seu aplicativo usa)
+EXPOSE 3000
