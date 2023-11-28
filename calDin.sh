@@ -1,10 +1,6 @@
-#!/bin/bash
+#Clona o repositorio
+git clone https://github.com/MarceloMederi/calendarioDigital
 
-# Cria o diretório Nginx
-mkdir C:\Users\marcelo.msantos\nginx
+cd calendarioDigital
 
-# Copia os arquivos HTML para o diretório Nginx
-cp -r . C:\Users\marcelo.msantos\nginx
-
-# Monta e executa o container do projeto
-docker build -t app . && docker run -p 8080:80 -d app
+docker build -t app . && docker run -d -p 3000:3000 app
