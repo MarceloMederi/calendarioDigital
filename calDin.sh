@@ -3,4 +3,4 @@ git clone https://github.com/MarceloMederi/calendarioDigital
 
 cd calendarioDigital
 
-docker build -t app . && docker run -d -p 3000:3000 app
+docker build -t app . && docker run -d -p 8080:8080 app
