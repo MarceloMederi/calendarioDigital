@@ -2,7 +2,7 @@
 FROM nginx:alpine-slim
 
 # Defina o diretório de trabalho no contêiner
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
 # Copia os arquivos
 COPY . .
