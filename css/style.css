@@ -1,19 +1,70 @@
 /*Importa a fonte "Open Sans" da Google Fonts, com pesos 400 e 500, para ser usada no documento*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 
-* { /*Zera as margens e preenchimentos padrão e define a fonte global para 'Open Sans'*/
+* {
+    /* Zera as margens e preenchimentos padrão e define a fonte global para 'Open Sans' */
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
-body {/*Define o corpo da página com altura total da viewport, um fundo de gradiente linear e configurações de flexbox para centralizar o conteúdo*/
-    height: 100vh;
+body {
+    /* Define o corpo da página com altura total da viewport, um fundo de gradiente linear e configurações de flexbox para centralizar o conteúdo */
+    min-height: 100vh; /* Mudança para min-height para garantir que o conteúdo não ultrapasse a viewport */
     background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.titulo {
+    /* Especifica estilos adicionais para o título, usando uma fonte diferente, aumentando o tamanho e tornando o texto mais negrito */
+    margin-bottom: 20px; /* Reduzido o espaço entre o título e as outras seções para telas menores */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw; /* Usando vw para tamanho de fonte responsiva */
+    font-weight: bolder;
+}
+
+.cidadeInput {
+    width: 80%; /* Mudança para uma largura relativa à largura do contêiner pai */
+    max-width: 300px; /* Adição de uma largura máxima para evitar que a entrada fique muito larga */
+    height: 60px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.data div {
+    /* Define estilos para a seção da semana, configurando a exibição flexível, cor do texto, tamanho da fonte e peso da fonte */
+    margin-bottom: 20px; /* Reduzido o espaço entre as seções de data e outras seções para telas menores */
+    display: flex;
+    color: white;
+    font-size: 3vw; /* Usando vw para tamanho de fonte responsiva */
+    font-weight: bolder;
+}
+
+.atualidade {
+    /* Configura estilos para a seção de atualidade, ajustando o tamanho da fonte e o peso da fonte */
+    margin-bottom: 20px; /* Reduzido o espaço entre as seções de atualidade e outras seções para telas menores */
+    font-size: 3vw; /* Usando vw para tamanho de fonte responsiva */
+    font-weight: bolder;
+}
+
+.relogio span {
+    /* Configura estilos para as <span> dentro da seção do relógio, ajustando o peso da fonte e o tamanho da fonte */
+    font-weight: bolder;
+    font-size: 4vw; /* Usando vw para tamanho de fonte responsiva */
+}
+
+.relogio span.tempo {
+    /* Define estilos específicos para as <span> com a classe "tempo" dentro da seção do relógio, ajustando o tamanho da fonte */
+    font-size: 1.5vw; /* Usando vw para tamanho de fonte responsiva */
+}
+
+.clima {
+    /* Configura estilos para a seção de clima e umidade, ajustando o tamanho da fonte e a margem superior para separação */
+    font-size: 2.5vw; /* Usando vw para tamanho de fonte responsiva */
+    margin-top: 20px; /* Reduzido o espaço entre a seção de clima e outras seções para telas menores */
 }
 
 /* Define estilos comuns para diversas seções, incluindo fundo preto, texto branco, borda arredondada, espaçamento de letras, sombra e margem inferior */
@@ -23,46 +74,5 @@ body {/*Define o corpo da página com altura total da viewport, um fundo de grad
     border-radius: 10px;
     letter-spacing: 3px;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
-    margin-bottom: 20px; /* Adiciona espaço entre as divs */
-}
-
-.titulo { /*Especifica estilos adicionais para o título, usando uma fonte diferente, aumentando o tamanho e tornando o texto mais negrito*/
-    margin-bottom: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    font-weight: bolder;
-}
-.cidadeInput {
-    width: 200px;
-    height: 60px;
-    font-size: 16px; 
-    text-align: center;
-}
-.data div { /*Define estilos para a seção da semana, configurando a exibição flexível, cor do texto, tamanho da fonte e peso da fonte*/
-    margin-bottom: 50px;
-    display: flex;
-    color: white;
-    font-size: 50px;
-    font-weight: bolder;
-}
-
-.atualidade { /*Configura estilos para a seção de atualidade, ajustando o tamanho da fonte e o peso da fonte*/
-    margin-bottom: 50px;
-    font-size: 50px;
-    font-weight: bolder;
-}
-
-
-.relogio span { /*Configura estilos para as <span> dentro da seção do relógio, ajustando o peso da fonte e o tamanho da fonte*/
-    font-weight: bolder;
-    font-size: 60px;
-}
-
-.relogio span.tempo { /*Define estilos específicos para as <span> com a classe "tempo" dentro da seção do relógio, ajustando o tamanho da fonte*/
-    font-size: 10px;
-}
-
-.clima { /*Configura estilos para a seção de clima e umidade, ajustando o tamanho da fonte e a margem superior para separação*/
-    font-size: 3em;
-    margin-top: 30px;
+    margin-bottom: 20px;
 }
