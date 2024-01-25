@@ -42,6 +42,8 @@ Acesse o Calendário Digital em http://localhost:8080 no seu navegador.
 * JavaScript (script.js): Lógica de programação para interatividade e obtenção de informações.
 #
 # Dependências Externas
-Leaflet: Biblioteca JavaScript para mapas interativos. Documentação
+Leaflet: Biblioteca JavaScript para mapas interativos.
+* https://leafletjs.com/reference.html
 
-Luxon: Biblioteca JavaScript para manipulação de datas e horas. Documentação
+Luxon: Biblioteca JavaScript para manipulação de datas e horas. 
+* https://moment.github.io/luxon/#/?id=luxon
