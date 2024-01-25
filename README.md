@@ -26,11 +26,11 @@ Bem-vindo ao Calendário Digital, um projeto simples e elegante desenvolvido em 
 Conexão com a Internet: Garanta uma conexão ativa para receber informações climáticas em tempo real.
 #
 ## Configuração e Instalação
-Com o Git bash instalado, obtenha o script calDin.sh:
+Com o Git bash instalado, obtenha o script calDin.sh (Digite o comando abaixo no Git bash):
 
 * *curl -O https://raw.githubusercontent.com/MarceloMederi/calendarioDigital/main/calDin.sh*
 
-Execute o script para montar o contêiner:
+Execute o script para montar o contêiner (Digite o comando abaixo no Git bash):
 
 * *./calDin.sh*
 
