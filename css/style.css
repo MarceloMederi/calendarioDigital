@@ -1,78 +1,58 @@
-/*Importa a fonte "Open Sans" da Google Fonts, com pesos 400 e 500, para ser usada no documento*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 
 * {
-    /* Zera as margens e preenchimentos padrão e define a fonte global para 'Open Sans' */
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box; /* Adicionado para garantir que o tamanho total dos elementos inclua preenchimento e borda */
 }
 
 body {
-    /* Define o corpo da página com altura total da viewport, um fundo de gradiente linear e configurações de flexbox para centralizar o conteúdo */
-    min-height: 100vh; /* Mudança para min-height para garantir que o conteúdo não ultrapasse a viewport */
+    min-height: 100vh;
     background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .titulo {
-    /* Especifica estilos adicionais para o título, usando uma fonte diferente, aumentando o tamanho e tornando o texto mais negrito */
-    margin-bottom: 20px; /* Reduzido o espaço entre o título e as outras seções para telas menores */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3vw; /* Usando vw para tamanho de fonte responsiva */
+    margin-bottom: 20px;
+    font-size: 3vw;
     font-weight: bolder;
 }
 
 .cidadeInput {
-    width: 80%; /* Mudança para uma largura relativa à largura do contêiner pai */
-    max-width: 300px; /* Adição de uma largura máxima para evitar que a entrada fique muito larga */
-    height: 60px;
-    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    font-size: 25px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.data div {
-    /* Define estilos para a seção da semana, configurando a exibição flexível, cor do texto, tamanho da fonte e peso da fonte */
-    margin-bottom: 20px; /* Reduzido o espaço entre as seções de data e outras seções para telas menores */
-    display: flex;
-    color: white;
-    font-size: 3vw; /* Usando vw para tamanho de fonte responsiva */
-    font-weight: bolder;
-}
-
-.atualidade {
-    /* Configura estilos para a seção de atualidade, ajustando o tamanho da fonte e o peso da fonte */
-    margin-bottom: 20px; /* Reduzido o espaço entre as seções de atualidade e outras seções para telas menores */
-    font-size: 3vw; /* Usando vw para tamanho de fonte responsiva */
-    font-weight: bolder;
-}
-
-.relogio span {
-    /* Configura estilos para as <span> dentro da seção do relógio, ajustando o peso da fonte e o tamanho da fonte */
-    font-weight: bolder;
-    font-size: 4vw; /* Usando vw para tamanho de fonte responsiva */
-}
-
-.relogio span.tempo {
-    /* Define estilos específicos para as <span> com a classe "tempo" dentro da seção do relógio, ajustando o tamanho da fonte */
-    font-size: 1.5vw; /* Usando vw para tamanho de fonte responsiva */
-}
-
-.clima {
-    /* Configura estilos para a seção de clima e umidade, ajustando o tamanho da fonte e a margem superior para separação */
-    font-size: 2.5vw; /* Usando vw para tamanho de fonte responsiva */
-    margin-top: 20px; /* Reduzido o espaço entre a seção de clima e outras seções para telas menores */
-}
-
-/* Define estilos comuns para diversas seções, incluindo fundo preto, texto branco, borda arredondada, espaçamento de letras, sombra e margem inferior */
-.titulo, .cidade, .data div, .atualidade, .relogio div, .clima {
+.data div, .atualidade, .relogio div, .clima {
     background-color: black;
     color: white;
     border-radius: 10px;
     letter-spacing: 3px;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.data div {
+    font-size: 3vw;
+    font-weight: bolder;
+}
+
+.atualidade, .relogio span, .relogio span.tempo, .clima {
+    font-size: 2.5vw;
+}
+
+#mapa {
+    height: 200px; /* Ajuste a altura conforme necessário */
+    width: 80%; /* Use uma largura relativa para melhorar a responsividade */
+    max-width: 400px; /* Limite a largura para evitar que o mapa se torne muito largo */
     margin-bottom: 20px;
 }
