@@ -45,7 +45,7 @@ const buscarPrevisaoTempo = async function (cidade) {
         const temperaturaTexto = `${data.main.temp} °C`;
         const umidadeTexto = `${data.main.humidity}%`;
 
-        const horaLocal = luxon.DateTime.utc().plus({ seconds: fusoHorario });
+        const horaLocal = luxon.DateTime.utc().plus({ seconds: fusoHorario, setZone: true }); // Adiciona setZone: true
         let horasAtual = horaLocal.hour;
         let minutosAtual = horaLocal.minute;
         let segundosAtual = horaLocal.second;
@@ -73,6 +73,7 @@ const buscarPrevisaoTempo = async function (cidade) {
         console.error('Erro ao obter temperatura e umidade:', error);
     }
 };
+
 
 // Função para atualizar a data
 function atualizarData(data) {
