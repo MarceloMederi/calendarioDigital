@@ -86,7 +86,7 @@ function atualizarData(data) {
     ano.textContent = anoAtual;
 
     const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-    const diaDaSemana = diasDaSemana[presente.weekday - 1];
+    const diaDaSemana = diasDaSemana[presente.weekday];
 
     atual.textContent = diaDaSemana;
 }
