@@ -54,7 +54,7 @@ const buscarPrevisaoTempo = async function (cidade) {
         if (minutosAtual < 10) minutosAtual = '0' + minutosAtual;
         if (segundosAtual < 10) segundosAtual = '0' + segundosAtual;
 
-        cidadeElement.textContent = `${nomeCidade} - ${temperaturaTexto}`;
+        cidadeElement.textContent = `${nomeCidade}:${temperaturaTexto}`;
         umidadeElement.textContent = `Umidade: ${umidadeTexto}`;
         horas.textContent = `${horasAtual}:${minutosAtual}:${segundosAtual}`;
 
