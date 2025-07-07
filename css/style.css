@@ -83,12 +83,22 @@ body {
 }
 
 /* Responsividade */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .titulo {
-        font-size: 3em; /* Ajusta o tamanho da fonte para telas menores */
+        font-size: 2em; /* Ajusta o tamanho da fonte para telas menores */
     }
 
     .cidadeInput, .data, .atualidade, .relogio, .clima {
         width: 90%; /* Ajusta a largura para telas menores */
+    }
+}
+
+@media (max-width: 500px) {
+    .titulo {
+        font-size: 1.8em; /* Ajusta o tamanho da fonte para telas ainda menores */
+    }
+
+    .cidadeInput, .data, .atualidade, .relogio, .clima {
+        width: 95%; /* Aumenta a largura para telas muito pequenas */
     }
 }
