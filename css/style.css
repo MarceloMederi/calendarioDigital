@@ -39,6 +39,7 @@ body {
 }
 
 .cidadeInput {
+    text-align: center;
     padding: 10px;
     border: 2px solid #ffffff; /* Alterando a borda para branco */
     border-radius: 5px;
